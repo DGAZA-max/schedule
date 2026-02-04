@@ -19,7 +19,10 @@
 ```
 
 ***Response***
-* Status Code : 201 created
+<br>
+<br>
+Status Code
+* 201 created
 ```
 {
 "작성자" : "음료수중독",
@@ -73,10 +76,12 @@ message	"페이지를 찾을 수 없습니다."
 | --- | --- | --- |
 | GET | /schedules{id} | application/json |
 <br>
+
 * 패스 파라미터
+
 | 필드명 | 타입 | 설명 |
-| --- | --- | --- |
-| schedule_ID | Long | 고유 식별자 |
+|-------|-------|-------|
+| writer_ID | Long | 고유 식별자 |
 
 ```
 {
@@ -96,11 +101,14 @@ message	"페이지를 찾을 수 없습니다."
 | Method | URL | Content-Type |
 | --- | --- | --- |
 | PATCH | /schedules{id} | application/json |
+
 <br>
+
 * 패스 파라미터
+
 | 필드명 | 타입 | 설명 |
-| --- | --- | --- |
-| schedule_ID | Long | 고유 식별자 |
+|-------|-------|-------|
+| writer_ID | Long | 고유 식별자 |
 
 ```
 {
@@ -147,11 +155,12 @@ message	"페이지를 찾을 수 없습니다."
 | Method | URL | Content-Type |
 | --- | --- | --- |
 | DELETE | /schedules{id} | application/json |
-<br>
+
 * 패스 파라미터
+
 | 필드명 | 타입 | 설명 |
-| --- | --- | --- |
-| schedule_ID | Long | 고유 식별자 |
+|-------|-------|-------|
+| writer_ID | Long | 고유 식별자 |
 
 ***Response***
 
