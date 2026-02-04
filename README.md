@@ -2,11 +2,15 @@
 **일정 생성**
 
 ***Request***
-* Method	URL	Content-Type
-* POST	/schedules	application/json
+| Method | URL | Content-Type |
+| --- | --- | --- |
+| POST | /schedules | application/json |
+
+Method	URL	Content-Type
+POST	/schedules	application/json
 
 '''
-{
+{ <br>
 "작성자" : "음료수중독", <br>
 "일정 제목" : "과자과제",
 "일정 내용" : "일정 관리 API",
