@@ -1,3 +1,24 @@
+```mermaid
+erDiagram
+
+    SCHEDULE {
+        BIGINT id PK
+        VARCHAR title
+        VARCHAR content
+        VARCHAR name
+        VARCHAR password
+        DATETIME created_at
+        DATETIME modified_at
+    }
+```
+
+
+<br>
+<br>
+<br>
+
+
+
 # schedule
 ### 일정 생성
 
