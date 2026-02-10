@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "schedules")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Schedule extends Timestamped{
+public class Schedule extends Timestamped {
 
 
     @Id
@@ -23,16 +23,17 @@ public class Schedule extends Timestamped{
     private String name;
     private String password;
 
-    public Schedule(String title, String content, String name, String password){
+    public Schedule(String title, String content, String name, String password) {
         this.title = title;
         this.content = content;
         this.name = name;
         this.password = password;
     }
 
-    public void update(String title, String name){
+    public void update(String title, String name) {
         this.title = title;
         this.name = name;
     }
+
 
 }

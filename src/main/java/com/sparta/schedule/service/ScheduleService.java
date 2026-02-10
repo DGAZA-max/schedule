@@ -13,6 +13,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
+@Transactional(readOnly = true)
 public class ScheduleService {
 
     private final ScheduleRepository scheduleRepository;
@@ -37,7 +38,6 @@ public class ScheduleService {
         );
     }
 
-    @Transactional(readOnly = true)
     public GetOneScheduleResponse getOne(Long scheduleId) {
         Schedule schedule = scheduleRepository.findById(scheduleId).orElseThrow(
                 () -> new IllegalStateException("없는 일정입니다.")
@@ -86,6 +86,9 @@ public class ScheduleService {
                 request.getTitle(),
                 request.getName()
         );
+        if (!schedule.getPassword().equals(request.getPassword())) {
+            throw new IllegalArgumentException("비밀번호가 일치하지 않습니다.");
+        }
         return new UpdateScheduleResponse(
                 schedule.getId(),
                 schedule.getTitle(),
@@ -98,13 +101,10 @@ public class ScheduleService {
 
     @Transactional
     public void delete(Long scheduleId){
-        boolean existence = scheduleRepository.existsById(scheduleId);
+        Schedule schedule = scheduleRepository.findById(scheduleId)
+                .orElseThrow(() -> new IllegalStateException("없는 일정입니다."));
 
-        if(!existence){
-            throw new IllegalStateException("없는 유저입니다.");
-        }
-
-        scheduleRepository.deleteById(scheduleId);
+        scheduleRepository.delete(schedule);
     }
 }
 
